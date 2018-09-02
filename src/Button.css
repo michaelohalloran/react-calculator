@@ -1,0 +1,14 @@
+.btn {
+    background: rgba(44, 62, 80,1.0);
+    display: block;
+    cursor: pointer;
+    width: 17vw;
+    height: 14vh;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.btn:hover {
+    color: black;
+    background: white;
+}

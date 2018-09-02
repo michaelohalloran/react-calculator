@@ -1,0 +1,8 @@
+.calc-display {
+    margin: 5%;
+    height: 10vh;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 70vw;
+  }

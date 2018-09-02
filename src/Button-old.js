@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Button.css';
 
 class Button extends Component {
   render() {
@@ -7,12 +6,11 @@ class Button extends Component {
     return (
       <div>
         <button 
-            className="btn"
             // onClick={()=> console.log(this.props.symbol)}
-            onClick={this.props.onClick}
-            value={this.props.value}
+            onClick={this.props.changeDisplay}
+            value={this.props.symbol}
         >
-            {this.props.label}
+            {this.props.symbol}
         </button>
       </div>
     )
