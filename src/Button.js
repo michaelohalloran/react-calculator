@@ -8,7 +8,6 @@ class Button extends Component {
       <div>
         <button 
             className="btn"
-            // onClick={()=> console.log(this.props.symbol)}
             onClick={this.props.onClick}
             value={this.props.value}
         >

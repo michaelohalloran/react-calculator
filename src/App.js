@@ -3,12 +3,6 @@ import './App.css';
 import Button from './Button';
 import Display from './Display';
 
-//PROCESS: when btn is clicked, append its value to this.state.display
-//also add its value to operationsArray
-//have a function attached to = key that joins all in equationArray
-//https://repl.it/@mike314151/reactCalc-test-work
-//https://stackoverflow.com/questions/13077923/how-can-i-convert-a-string-into-a-math-operator-in-javascript
-
 class App extends Component {
   constructor() {
     super();
@@ -24,7 +18,6 @@ class App extends Component {
   }
 
   handleClick(e) {
-    // console.log(e.target.value);
     //when btn is clicked:
     //1. for numbers, add value to operationsArray
     //2. update the display to show it
@@ -52,7 +45,6 @@ class App extends Component {
         break;
       case 'delete':
         //delete the last character entered in opsArray and in display
-        // console.log(typeof this.state.display);
         let reducedDisplay = this.state.display.substring(0, this.state.display.length - 1);
         let reducedOpsArray;
         //last item in opsArray
@@ -65,10 +57,8 @@ class App extends Component {
           lastItem = Math.floor(lastItem/10);
           reducedOpsArray = [lastItem];
         //Case 2: single single-digit item in array, or multi-item array, just delete last item
-        // } else if(opsArrayLength === 1 && String(lastItem).length === 1) {
         } else {
           reducedOpsArray = this.state.operationsArray.slice(0, this.state.operationsArray.length - 1);
-          // return reducedOpsArray;
         }
         this.setState({
           operationsArray: [reducedOpsArray],
@@ -76,7 +66,6 @@ class App extends Component {
         });
         break;
       case '%':
-        //take current answer from opsArray and /100
         let percent = eval(expression)/100;
         this.setState({
           display: percent,
@@ -86,9 +75,7 @@ class App extends Component {
 
     //run this on pressing = btn, take what's in the operationsArray and run eval, updating state as needed
       default: 
-        console.log(`evaluating ${expression}`);
         let answer = String(eval(expression));
-        console.log(`answer is ${answer}`);
         //show this answer in display
         //then make operations array contain it as the only member, overwriting what preceded
         this.setState({
